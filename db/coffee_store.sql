@@ -16,240 +16,128 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Capuccino`
+-- Table structure for table `beverage_type`
 --
 
-DROP TABLE IF EXISTS `Capuccino`;
+DROP TABLE IF EXISTS `beverage_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Capuccino` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `ID_SABOR` int DEFAULT NULL,
-  `ID_TAMANO` int DEFAULT NULL,
-  `ID_TIPO_BEBIDA` int DEFAULT NULL,
-  `PRECIO` decimal(10,2) DEFAULT NULL,
-  `URL` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `beverage_type` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Capuccino`
+-- Dumping data for table `beverage_type`
 --
 
-LOCK TABLES `Capuccino` WRITE;
-/*!40000 ALTER TABLE `Capuccino` DISABLE KEYS */;
-INSERT INTO `Capuccino` VALUES (1,8,2,1,50.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(2,9,2,1,50.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(3,10,2,1,50.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(4,11,2,1,50.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(5,12,2,1,50.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(6,13,2,1,45.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(7,8,3,1,57.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(8,9,3,1,57.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(9,10,3,1,57.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(10,11,3,1,57.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(11,12,3,1,57.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(12,13,3,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg');
-/*!40000 ALTER TABLE `Capuccino` ENABLE KEYS */;
+LOCK TABLES `beverage_type` WRITE;
+/*!40000 ALTER TABLE `beverage_type` DISABLE KEYS */;
+INSERT INTO `beverage_type` VALUES (1,'CALIENTE'),(2,'FRIA');
+/*!40000 ALTER TABLE `beverage_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Clasicos`
+-- Table structure for table `flavor`
 --
 
-DROP TABLE IF EXISTS `Clasicos`;
+DROP TABLE IF EXISTS `flavor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Clasicos` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `NOMBRE` varchar(255) DEFAULT NULL,
-  `ID_TAMANO` int DEFAULT NULL,
-  `ID_TIPO_BEBIDA` int DEFAULT NULL,
-  `PRECIO` decimal(10,2) DEFAULT NULL,
-  `URL` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Clasicos`
---
-
-LOCK TABLES `Clasicos` WRITE;
-/*!40000 ALTER TABLE `Clasicos` DISABLE KEYS */;
-INSERT INTO `Clasicos` VALUES (1,'ESPRESSO',1,1,27.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(2,'ESPRESSO DOBLE',1,1,35.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(3,'CARAMEL MACHIATO',1,1,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(4,'CHOCOLATE',1,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(5,'CHOCOLATE BLANCO',1,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(6,'TARO',1,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(7,'CHAI',1,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(8,'MATCHA LATTE',1,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(9,'CHOCO-MENTA',1,1,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(10,'INFUSION ENCANTUM',1,1,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(11,'INFUSION',1,1,30.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(12,'AMERICANO',2,1,35.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(13,'CAPUCCINO',2,1,45.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(14,'MOKACCINO',2,1,45.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(15,'LATTE',2,1,45.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(16,'BOMBÓN',2,1,45.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(17,'AMERICANO',3,1,40.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(18,'CAPUCCINO',3,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(19,'MOKACCINO',3,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(20,'LATTE',3,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(21,'BOMBÓN',3,1,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(22,'ICED AMERICANO',1,2,40.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(23,'ICED LATTE',1,2,52.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(24,'AFFOGATO',1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(25,'ICED CARAMEL MACHIATO',1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg');
-/*!40000 ALTER TABLE `Clasicos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Frappe`
---
-
-DROP TABLE IF EXISTS `Frappe`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Frappe` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `ID_SABOR` int DEFAULT NULL,
-  `ID_TAMANO` int DEFAULT NULL,
-  `ID_TIPO_BEBIDA` int DEFAULT NULL,
-  `PRECIO` decimal(10,2) DEFAULT NULL,
-  `URL` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Frappe`
---
-
-LOCK TABLES `Frappe` WRITE;
-/*!40000 ALTER TABLE `Frappe` DISABLE KEYS */;
-INSERT INTO `Frappe` VALUES (1,2,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(2,14,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(3,15,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(4,16,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(5,17,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(6,18,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(7,19,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(8,20,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(9,21,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(10,22,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg');
-/*!40000 ALTER TABLE `Frappe` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Ice`
---
-
-DROP TABLE IF EXISTS `Ice`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Ice` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `ID_SABOR` int DEFAULT NULL,
-  `ID_TAMANO` int DEFAULT NULL,
-  `ID_TIPO_BEBIDA` int DEFAULT NULL,
-  `PRECIO` decimal(10,2) DEFAULT NULL,
-  `URL` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Ice`
---
-
-LOCK TABLES `Ice` WRITE;
-/*!40000 ALTER TABLE `Ice` DISABLE KEYS */;
-INSERT INTO `Ice` VALUES (1,1,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(2,2,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(3,4,1,2,55.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg');
-/*!40000 ALTER TABLE `Ice` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Sabor`
---
-
-DROP TABLE IF EXISTS `Sabor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Sabor` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `Sabor` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+CREATE TABLE `flavor` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `flavor_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Sabor`
+-- Dumping data for table `flavor`
 --
 
-LOCK TABLES `Sabor` WRITE;
-/*!40000 ALTER TABLE `Sabor` DISABLE KEYS */;
-INSERT INTO `Sabor` VALUES (1,'LIMON'),(2,'CEREZA'),(3,'FRESA'),(4,'UVA'),(5,'BLUE BERRY'),(6,'MANZANA VERDE'),(7,'FRUTOS ROJOS'),(8,'AVELLANA'),(9,'ROMPOPE'),(10,'TIRAMISU'),(11,'CREMA IRLANDESA'),(12,'CAJETA'),(13,'SOLO'),(14,'CAPPUCCINO'),(15,'CARAMEL'),(16,'CHOCOLATE'),(17,'OREO'),(18,'MATCHA'),(19,'TARO'),(20,'CHICLE'),(21,'CHAI'),(22,'ROMPOPE');
-/*!40000 ALTER TABLE `Sabor` ENABLE KEYS */;
+LOCK TABLES `flavor` WRITE;
+/*!40000 ALTER TABLE `flavor` DISABLE KEYS */;
+INSERT INTO `flavor` VALUES (1,'LIMON'),(2,'CEREZA'),(3,'FRESA'),(4,'UVA'),(5,'BLUE BERRY'),(6,'MANZANA VERDE'),(7,'FRUTOS ROJOS'),(8,'AVELLANA'),(9,'ROMPOPE'),(10,'TIRAMISU'),(11,'CREMA IRLANDESA'),(12,'CAJETA'),(13,'SOLO'),(14,'CAPPUCCINO'),(15,'CARAMEL'),(16,'CHOCOLATE'),(17,'OREO'),(18,'MATCHA'),(19,'TARO'),(20,'CHICLE'),(21,'CHAI'),(22,'ROMPOPE');
+/*!40000 ALTER TABLE `flavor` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Soda`
+-- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `Soda`;
+DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Soda` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `ID_TIPO_SODA` int DEFAULT NULL,
-  `ID_SABOR` int DEFAULT NULL,
-  `ID_TAMANO` int DEFAULT NULL,
-  `ID_TIPO_BEBIDA` int DEFAULT NULL,
-  `PRECIO` decimal(10,2) DEFAULT NULL,
-  `URL` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `product` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `flavor_id` int DEFAULT NULL,
+  `size_id` int DEFAULT NULL,
+  `beverage_type_id` int DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Soda`
+-- Dumping data for table `product`
 --
 
-LOCK TABLES `Soda` WRITE;
-/*!40000 ALTER TABLE `Soda` DISABLE KEYS */;
-INSERT INTO `Soda` VALUES (1,1,1,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(2,1,2,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(3,1,3,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(4,1,4,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(5,1,5,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(6,1,6,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(7,2,4,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg'),(8,2,5,1,2,48.00,'https://hips.hearstapps.com/hmg-prod/images/hufflepuff-1571664671.jpg');
-/*!40000 ALTER TABLE `Soda` ENABLE KEYS */;
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'ESPRESSO',13,1,1,27.00,'url1'),(2,'ESPRESSO DOBLE',13,1,1,35.00,'url2'),(3,'CARAMEL MACHIATO',13,1,1,55.00,'url3'),(4,'CHOCOLATE',13,1,1,52.00,'url4'),(5,'CHOCOLATE BLANCO',13,1,1,52.00,'url5'),(6,'TARO',13,1,1,52.00,'url6'),(7,'CHAI',13,1,1,52.00,'url7'),(8,'MATCHA LATTE',13,1,1,52.00,'url8'),(9,'CHOCO-MENTA',13,1,1,55.00,'url9'),(10,'INFUSION ENCANTUM',13,1,1,48.00,'url10'),(11,'INFUSION',13,1,1,30.00,'url11'),(12,'AMERICANO',13,2,1,35.00,'url12'),(13,'CAPUCCINO',13,2,1,45.00,'url13'),(14,'MOKACCINO',13,2,1,45.00,'url14'),(15,'LATTE',13,2,1,45.00,'url15'),(16,'BOMBÓN',13,2,1,45.00,'url16'),(17,'AMERICANO',13,3,1,40.00,'url17'),(18,'CAPUCCINO',13,3,1,52.00,'url18'),(19,'MOKACCINO',13,3,1,52.00,'url19'),(20,'LATTE',13,3,1,52.00,'url20'),(21,'BOMBÓN',13,3,1,52.00,'url21'),(22,'ICED AMERICANO',13,1,2,40.00,'url22'),(23,'ICED LATTE',13,1,2,52.00,'url23'),(24,'AFFOGATO',13,1,2,55.00,'url24'),(25,'ICED CARAMEL MACHIATO',13,1,2,55.00,'url25'),(26,'SODA',1,1,2,48.00,'url26'),(27,'SODA',2,1,2,48.00,'url27'),(28,'SODA',3,1,2,48.00,'url28'),(29,'SODA',4,1,2,48.00,'url29'),(30,'SODA',5,1,2,48.00,'url30'),(31,'SODA',6,1,2,48.00,'url31'),(32,'SODA',4,1,2,48.00,'url32'),(33,'SODA',5,1,2,48.00,'url33'),(34,'CAPUCCINO',8,2,1,50.00,'url34'),(35,'CAPUCCINO',9,2,1,50.00,'url35'),(36,'CAPUCCINO',10,2,1,50.00,'url36'),(37,'CAPUCCINO',11,2,1,50.00,'url37'),(38,'CAPUCCINO',12,2,1,50.00,'url38'),(39,'CAPUCCINO',13,2,1,45.00,'url39'),(40,'CAPUCCINO',8,3,1,57.00,'url40'),(41,'CAPUCCINO',9,3,1,57.00,'url41'),(42,'CAPUCCINO',10,3,1,57.00,'url42'),(43,'CAPUCCINO',11,3,1,57.00,'url43'),(44,'CAPUCCINO',12,3,1,57.00,'url44'),(45,'CAPUCCINO',13,3,1,52.00,'url45'),(46,'ICE',1,1,2,55.00,'url46'),(47,'ICE',2,1,2,55.00,'url47'),(48,'ICE',4,1,2,55.00,'url48');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Tamano`
+-- Table structure for table `size`
 --
 
-DROP TABLE IF EXISTS `Tamano`;
+DROP TABLE IF EXISTS `size`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Tamano` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `Tamano` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+CREATE TABLE `size` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `size_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Tamano`
+-- Dumping data for table `size`
 --
 
-LOCK TABLES `Tamano` WRITE;
-/*!40000 ALTER TABLE `Tamano` DISABLE KEYS */;
-INSERT INTO `Tamano` VALUES (1,'UNICO'),(2,'MEDIANO'),(3,'GRANDE'),(4,'REBANADA'),(5,'COMPLETO');
-/*!40000 ALTER TABLE `Tamano` ENABLE KEYS */;
+LOCK TABLES `size` WRITE;
+/*!40000 ALTER TABLE `size` DISABLE KEYS */;
+INSERT INTO `size` VALUES (1,'UNICO'),(2,'MEDIANO'),(3,'GRANDE'),(4,'REBANADA'),(5,'COMPLETO');
+/*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `TipoBebida`
+-- Table structure for table `soda_type`
 --
 
-DROP TABLE IF EXISTS `TipoBebida`;
+DROP TABLE IF EXISTS `soda_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `TipoBebida` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `Tipo` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+CREATE TABLE `soda_type` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `TipoBebida`
+-- Dumping data for table `soda_type`
 --
 
-LOCK TABLES `TipoBebida` WRITE;
-/*!40000 ALTER TABLE `TipoBebida` DISABLE KEYS */;
-INSERT INTO `TipoBebida` VALUES (1,'CALIENTE'),(2,'FRIA');
-/*!40000 ALTER TABLE `TipoBebida` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `TipoSoda`
---
-
-DROP TABLE IF EXISTS `TipoSoda`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `TipoSoda` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `Tipo` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `TipoSoda`
---
-
-LOCK TABLES `TipoSoda` WRITE;
-/*!40000 ALTER TABLE `TipoSoda` DISABLE KEYS */;
-INSERT INTO `TipoSoda` VALUES (1,'ITALIANA'),(2,'COREANA');
-/*!40000 ALTER TABLE `TipoSoda` ENABLE KEYS */;
+LOCK TABLES `soda_type` WRITE;
+/*!40000 ALTER TABLE `soda_type` DISABLE KEYS */;
+INSERT INTO `soda_type` VALUES (1,'ITALIANA'),(2,'COREANA');
+/*!40000 ALTER TABLE `soda_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -261,4 +149,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-07 19:33:49
+-- Dump completed on 2024-02-09 14:44:50
