@@ -1,17 +1,21 @@
 require('dotenv').config();
 const express = require('express');
+const dbConnection = require('./db/conn');
 
 const app = express();
 
-const port = process.env.PORT || 3000;
-const www = process.env.WWW || './public';
+const port = process.env.PORT;
+const www = process.env.WWW;
 
 app.use(express.static(www));
 
-console.log(`serving ${www}`);
 
-app.get('*', (req, res) => {
-    res.sendFile(`index.html`, { root: www });
-});
+const startServer = async () => {
 
-app.listen(port, () => console.log(`listening on http://localhost:${port}`));
+    await dbConnection();
+
+    app.listen(port, () => console.log(`listening on http://localhost:${port}`));
+}
+
+
+startServer();
