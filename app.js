@@ -9,6 +9,7 @@ const www = process.env.WWW;
 
 app.use(express.static(www));
 
+app.use("/api", require('./routes'));
 
 const startServer = async () => {
 
