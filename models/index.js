@@ -7,7 +7,6 @@ const pathModels = (ENGINE_DB === 'nosql') ? path.join(__dirname, 'nosql') : pat
  * Models object.
  */
 const models = {
-    
     productModel: require(`${pathModels}/product`),
 }
 

@@ -1,3 +1,31 @@
-.card {
-    margin: 10px 5px 5px;
+#cards-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 10px;
 }
+.card{
+    margin-bottom: 10px;
+    width: 10rem;
+}
+
+
+
+/* .card {
+    margin: 10px 5px 5px;
+    width: 13rem;
+}
+
+#cards-container{
+    background-color: aqua;
+}
+
+@media (width <= 1000px) {
+    #cards-container{
+        background-color: red;
+    }
+
+    #carrito{
+        display: none;
+    }
+} */
