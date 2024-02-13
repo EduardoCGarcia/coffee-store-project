@@ -1,17 +1,36 @@
-// Función para obtener los datos de la API
-async function fetchData() {
+const button = document.getElementById('button-addon2');
+let inputValue = '';
+button.addEventListener('click', function() {
+  inputValue = document.querySelector('.form-control').value;
+  renderCards();
+});
+
+const getData = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/product');
     const data = await response.json();
     return data;
   } catch (error) {
     console.error('Error al obtener los datos de la API:', error);
-    return []; // Devuelve un arreglo vacío en caso de error
+    return [];
   }
 }
 
-// Función para crear una tarjeta (card) basada en los datos proporcionados
-function createCard(title, text, imgUrl) {
+const filterDataByName = async (name) => {
+  try {
+    // Obtener todos los datos
+    const allData = await getData();
+    // Filtrar los datos por nombre que contengan el texto ingresado
+    const filteredData = allData.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
+    return filteredData;
+  } catch (error) {
+    console.error('Error al filtrar los datos por nombre:', error);
+    return [];
+  }
+}
+
+
+const  createCard = (title, text, imgUrl) => {
   const cardDiv = document.createElement('div');
   cardDiv.classList.add('card');
 
@@ -31,14 +50,8 @@ function createCard(title, text, imgUrl) {
   cardText.classList.add('card-text');
   cardText.textContent = "$ " + text;
 
-  /* const link = document.createElement('a');
-  link.href = '#';
-  link.classList.add('btn', 'btn-primary');
-  link.textContent = 'Go somewhere'; */
-
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardText);
-  /* cardBody.appendChild(link); */
 
   cardDiv.appendChild(img);
   cardDiv.appendChild(cardBody);
@@ -46,14 +59,18 @@ function createCard(title, text, imgUrl) {
   return cardDiv;
 }
 
-// Función para agregar las tarjetas al contenedor en el DOM
-async function renderCards() {
+const renderCards = async () => {
   const cardsContainer = document.getElementById('cards-container');
   // Limpiar el contenedor antes de agregar nuevas tarjetas
   cardsContainer.innerHTML = '';
 
   // Obtener los datos de la API
-  const data = await fetchData();
+  let data;
+  if (!inputValue) {
+    data = await getData();
+  }else{
+    data = await filterDataByName(inputValue);
+  }
   
   // Recorrer los datos y agregar cada tarjeta al contenedor
   data.forEach(item => {
@@ -62,5 +79,4 @@ async function renderCards() {
   });
 }
 
-// Llamar a la función para renderizar las tarjetas al cargar la página
 window.addEventListener('DOMContentLoaded', renderCards);
