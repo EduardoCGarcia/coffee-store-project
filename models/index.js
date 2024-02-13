@@ -8,6 +8,10 @@ const pathModels = (ENGINE_DB === 'nosql') ? path.join(__dirname, 'nosql') : pat
  */
 const models = {
     productModel: require(`${pathModels}/product`),
+    beverageTypeModel: require(`${pathModels}/beverage_type`),
+    flavorModel: require(`${pathModels}/flavor`),
+    sizeModel: require(`${pathModels}/size`),
+    sodaTypeModel: require(`${pathModels}/soda_type`),
 }
 
 module.exports = models;

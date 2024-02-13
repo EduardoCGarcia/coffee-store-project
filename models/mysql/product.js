@@ -1,5 +1,6 @@
 const { sequelize } = require("../../db/conn");
 const { DataTypes } = require("sequelize");
+const Flavor = require("../mysql/flavor")
 
 const Producto = sequelize.define(
     "product",
@@ -30,8 +31,9 @@ const Producto = sequelize.define(
     },
     {
         tableName: 'product',
-        timestamps: false // Esto evita que se creen los campos createdAt y updatedAt en la tabla.
+        timestamps: false
     }
 );
 
+Producto.belongsTo(Flavor, {foreignKey:"flavor_id", as: "Flavor"});
 module.exports = Producto;
