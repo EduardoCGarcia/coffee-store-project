@@ -14,13 +14,26 @@
 </head>
 
 <body>
-  <div id="cart" class="container-fluid bg-primary">
-
+  <div id="cart" class="container-fluid text-center">
+    <div class="row">
+      <div class="col">
+        <button id="btn_carrito" class="btn">
+          Ver Carrito
+          <span id="num-prods" class="badge">12</span>
+        </button>
+      </div>
+      <div class="col">
+        <button id="btn_total" class="btn">
+          Total
+          <span>$ 200.00</span>
+        </button>
+      </div>
+    </div>
   </div>
 
   <div id="search" class="container">
     <!-- Inicio del buscador -->
-    <div class="input-group mb-3">
+    <div class="input-group mb-2">
       <input type="text" class="form-control" placeholder="Escribe el nombre del producto..."
         aria-label="Recipient's username" aria-describedby="button-addon2">
       <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
@@ -29,16 +42,17 @@
 
     <!-- Inicio de las car -->
     <div class="container-fluid text-center">
-      <!-- Inicio de las cards -->
       <div id="cards-container">
         <!-- Aquí adentro se rederizan las card desde el main -->
       </div>
-      <!-- Inicio de las cards -->
     </div>
     <!-- Fin de cards -->
+    <br>
+    <br>
+    <br>
 
   </div>
-  
+
 
 
 
