@@ -18,30 +18,17 @@
 }
 
 h6{
-    font-size: 14px !important;
-}
-
-.card-body p{
-    font-size: 12px;
+    font-size: 15px !important;
     margin-bottom: 0 !important;
 }
 
-
-/* .card {
-    margin: 10px 5px 5px;
-    width: 13rem;
+.card-body p{
+    font-size: 14px;
+    margin-bottom: 0 !important;
 }
 
-#cards-container{
-    background-color: aqua;
+#cart{
+    position: relative;
+    top: 0;
+    min-height: 50px;
 }
-
-@media (width <= 1000px) {
-    #cards-container{
-        background-color: red;
-    }
-
-    #carrito{
-        display: none;
-    }
-} */

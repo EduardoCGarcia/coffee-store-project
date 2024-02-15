@@ -1,4 +1,6 @@
 const button = document.getElementById('button-addon2');
+
+
 let inputValue = '';
 
 
@@ -30,9 +32,12 @@ const filterDataByName = async (name) => {
 const  createCard = (item) => {
   const cardDiv = document.createElement('div');
   cardDiv.classList.add('card');
+  cardDiv.addEventListener('click', () => {
+    alert('hola mundo');
+  })
 
   const img = document.createElement('img');
-  img.src = item.url;
+  img.src = "http://localhost:3000/assets/espresso.webp";
   img.classList.add('card-img-top');
   img.alt = '...';
 
@@ -84,9 +89,14 @@ const renderCards = async () => {
   });
 }
 
+const addToCar = ()  => {
+
+}
+
 window.addEventListener('DOMContentLoaded', renderCards);
 
 button.addEventListener('click', () => {
   inputValue = document.querySelector('.form-control').value;
   renderCards();
 });
+
