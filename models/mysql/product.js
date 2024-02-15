@@ -1,6 +1,8 @@
 const { sequelize } = require("../../db/conn");
 const { DataTypes } = require("sequelize");
 const Flavor = require("../mysql/flavor")
+const Size = require("../mysql/size")
+const Beverage = require("../mysql/beverage_type")
 
 const Producto = sequelize.define(
     "product",
@@ -36,4 +38,6 @@ const Producto = sequelize.define(
 );
 
 Producto.belongsTo(Flavor, {foreignKey:"flavor_id", as: "Flavor"});
+Producto.belongsTo(Size, {foreignKey:"size_id", as: "Size"});
+Producto.belongsTo(Beverage, {foreignKey:"beverage_type_id", as: "Beverage"});
 module.exports = Producto;
