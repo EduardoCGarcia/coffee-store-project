@@ -4,6 +4,8 @@ const { dbConnection } = require('./db/conn');
 
 const app = express();
 
+app.use(express.json());
+
 const port = process.env.PORT;
 const www = process.env.WWW;
 

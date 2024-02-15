@@ -12,6 +12,9 @@ const models = {
     flavorModel: require(`${pathModels}/flavor`),
     sizeModel: require(`${pathModels}/size`),
     sodaTypeModel: require(`${pathModels}/soda_type`),
+    salesModel: require(`${pathModels}/sales`),
+    salesDetailModel: require(`${pathModels}/sales-detail`),
+
 }
 
 module.exports = models;
