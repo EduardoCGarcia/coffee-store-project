@@ -104,7 +104,7 @@ CREATE TABLE `sales` (
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `total` decimal(10,2) DEFAULT '0.00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `sales` (
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-INSERT INTO `sales` VALUES (1,'2024-02-15 00:05:17',0.00),(2,'2024-02-15 00:12:40',117.00);
+INSERT INTO `sales` VALUES (1,'2024-02-15 00:05:17',0.00),(2,'2024-02-15 00:12:40',117.00),(6,'2024-02-15 00:00:00',189.00),(7,'2024-02-15 00:00:00',89.00),(8,'2024-02-15 23:47:36',89.00),(9,'2024-02-15 23:48:03',89.00),(10,'2024-02-16 00:37:36',89.00),(11,'2024-02-16 00:43:53',117.00),(12,'2024-02-16 00:46:29',89.00),(13,'2024-02-16 00:49:10',55.00),(14,'2024-02-16 00:54:32',134.00),(15,'2024-02-16 00:57:11',62.00),(16,'2024-02-16 01:00:44',0.00),(17,'2024-02-16 02:02:27',272.00),(18,'2024-02-16 03:04:21',207.00),(19,'2024-02-16 03:06:13',208.00);
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +134,7 @@ CREATE TABLE `sales_detail` (
   KEY `product_id` (`product_id`),
   CONSTRAINT `sales_detail_ibfk_1` FOREIGN KEY (`sales_id`) REFERENCES `sales` (`id`),
   CONSTRAINT `sales_detail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +143,7 @@ CREATE TABLE `sales_detail` (
 
 LOCK TABLES `sales_detail` WRITE;
 /*!40000 ALTER TABLE `sales_detail` DISABLE KEYS */;
-INSERT INTO `sales_detail` VALUES (4,2,1,1),(5,2,2,1),(6,2,3,1);
+INSERT INTO `sales_detail` VALUES (4,2,1,1),(5,2,2,1),(6,2,3,1),(7,6,1,1),(8,6,2,1),(9,6,1,1),(10,7,1,1),(11,7,2,1),(12,7,1,1),(13,8,1,1),(14,8,2,1),(15,8,1,1),(16,9,1,1),(17,9,2,1),(18,9,1,1),(19,10,1,1),(20,10,2,1),(21,10,1,1),(22,11,1,1),(23,11,2,1),(24,11,3,1),(25,12,1,2),(26,12,2,1),(27,13,9,1),(28,14,1,1),(29,14,3,1),(30,14,4,1),(31,15,1,1),(32,15,2,1),(33,17,1,1),(34,17,2,7),(35,18,9,1),(36,18,7,1),(37,18,8,1),(38,18,10,1),(39,19,5,1),(40,19,6,1),(41,19,8,1),(42,19,7,1);
 /*!40000 ALTER TABLE `sales_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -231,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-15 10:42:29
+-- Dump completed on 2024-02-15 21:08:48
