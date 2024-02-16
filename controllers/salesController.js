@@ -9,9 +9,7 @@ const createSale = async (req, res) => {
         
         const { date, total, products } = matchedData(req);
 
-        const newSale = await Sale.create({
-            date
-        }, { transaction: t });
+        const newSale = await Sale.create({}, { transaction: t });
 
         const salesDetailsPromises = products.map(product => {
             return SaleDetail.create({

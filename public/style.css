@@ -8,7 +8,6 @@
 }
 .card{
     margin-bottom: 10px;
-    width: 9.5rem;
     border-color: #eeba30 !important;
     background-color: #740001 !important;
     box-sizing: border-box;
@@ -54,3 +53,24 @@ h6{
     margin: 10px;
 
 }
+
+
+#carrito{
+    transition: all 300ms;
+}
+#vista-carrito.mostrar {
+    top: 0 ;
+  }
+
+
+#vista-carrito{
+    height: 610px;
+    width: 100%;
+    position: fixed;
+    top: -1000px;
+    z-index: 100;
+    background-color: #000000;
+    transition: all 300ms;
+    overflow: auto;
+}
+
